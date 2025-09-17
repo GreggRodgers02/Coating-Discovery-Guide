@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coating Discovery Guide - Sherwin-Williams</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8ecef 100%);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #0038A8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover {
+            color: #002d8a;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #0038A8;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .description {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .cta-section {
+            background: white;
+            padding: 4rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            margin-bottom: 4rem;
+            text-align: center;
+            animation: fadeIn 1s ease-out 0.3s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #0038A8 0%, #E31837 100%);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .cta-header {
+            margin-bottom: 2rem;
+        }
+
+        .cta-header h2 {
+            color: #0038A8;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta-header p {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-steps {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .step:nth-child(1) { animation-delay: 0.1s; }
+        .step:nth-child(2) { animation-delay: 0.2s; }
+        .step:nth-child(3) { animation-delay: 0.3s; }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0038A8 0%, #002d8a 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+            box-shadow: 0 4px 15px rgba(0, 56, 168, 0.3);
+        }
+
+        .step h3 {
+            color: #0038A8;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .step p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1.25rem 3rem;
+            font-size: 1.15rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            min-width: 200px;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: width 0.6s, height 0.6s;
+            transform: translate(-50%, -50%);
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #E31837 0%, #c01430 100%);
+            color: white;
+            box-shadow: 0 4px 20px rgba(227, 24, 55, 0.3);
+            font-size: 1.25rem;
+            padding: 1.5rem 3.5rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(227, 24, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #0038A8;
+            border: 2px solid #0038A8;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: #0038A8;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 56, 168, 0.3);
+        }
+
+        .new-tab-icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .features-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, #0038A8 0%, #002d8a 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            color: #0038A8;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .info-banner {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8ecff 100%);
+            border-left: 4px solid #0038A8;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: #0038A8;
+        }
+
+        .info-banner p {
+            color: #555;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: #666;
+            background: white;
+            margin-top: 4rem;
+            border-top: 1px solid #e8ecef;
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: #0038A8;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #002d8a;
+            text-decoration: underline;
+        }
+
+        /* Loading animation */
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .cta-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .description {
+                font-size: 1rem;
+                padding: 1.5rem;
+            }
+
+            .main-container {
+                padding: 2rem 1rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .form-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .header-content {
+                padding: 1rem;
+            }
+
+            .features-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .btn {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            .btn-primary {
+                padding: 1.25rem 2.5rem;
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Focus styles for accessibility */
+        .btn:focus {
+            outline: 3px solid #0038A8;
+            outline-offset: 3px;
+        }
+
+        .highlight {
+            color: #0038A8;
+            font-weight: 600;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="https://www.sherwin-williams.com" class="logo">Sherwin-Williams</a>
+            <span style="color: #666; font-size: 0.9rem;">Coating Discovery Guide</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1>Coating Discovery Guide</h1>
+            <p class="subtitle">Find the appropriate coating for your project</p>
+            
+            <div class="description">
+                The Coating Discovery Guide offered by Sherwin-Williams can be used to help you get a better idea on what coatings to use for your project. This tool is not meant to be a replacement for a sales rep but to help level up your knowledge on coatings that could have an impact with your project before, during, and after your meeting with a Industrial Coatings Sales Rep. 
+                <br><br>
+                This tool gives you and your team the opportunity to use <span class="highlight">The Coating Discovery Guide (CDG) by Sherwin-Williams</span> to help you quickly identify coating options based on your project details. 
+                
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" id="form-section">
+            <div class="cta-header">
+                <h2>Get Started with Your Coating Discovery</h2>
+                <p>Access our comprehensive coating recommendation tool</p>
+                <p style="font-size: 0.95rem; color: #888;">Complete the form to receive personalized coating options for your project</p>
+            </div>
+
+            <!-- Steps -->
+            <div class="form-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Click Start</h3>
+                    <p>Click the button below to open the Coating Discovery form in a new tab</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Complete Form</h3>
+                    <p>Fill in your project details and coating requirements</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Get Results</h3>
+                    <p>Receive personalized coating recommendations instantly</p>
+                </div>
+            </div>
+
+            <!-- Info Banner -->
+            <div class="info-banner">
+                <span class="info-icon">ℹ️</span>
+                <p><strong>Note:</strong> The form will open in a new tab for the best experience. Make sure to allow pop-ups for this site if prompted.</p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="button-group">
+                <a href="https://gregg02.app.n8n.cloud/form/952c07ee-ef2d-4a64-8c42-e2550a9af264" 
+                   target="_blank" 
+                   class="btn btn-primary"
+                   onclick="trackFormOpen()">
+                    Start Coating Discovery Guide
+                    <svg class="new-tab-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M14 3v2h3.59l-9.3 9.29 1.42 1.42L19 6.41V10h2V3h-7z"/>
+                        <path d="M5 5h6v2H5v12h12v-6h2v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"/>
+                    </svg>
+                </a>
+                <a href="https://www.sherwin-williams.com" 
+                   target="_blank" 
+                   class="btn btn-secondary">
+                    Visit SW Homepage
+                </a>
+            </div>
+            
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Targeted Recommendations</h3>
+                <p>Get coating suggestions specifically tailored to your project's unique requirements and environmental conditions.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Quick Process</h3>
+                <p>Complete the comprehensive form in just a few minutes and receive instant coating recommendations.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💡</div>
+                <h3>Expert Support</h3>
+                <p>After submitting the form, our internal team will contact you shortly. Please consult with a Sherwin-Williams representative before implementing any coating recommendations.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://www.sherwin-williams.com" target="_blank">Sherwin-Williams</a>
+            <a href="https://www.sherwin-williams.com/industrial" target="_blank">Industrial Coatings</a>
+            <a href="https://www.sherwin-williams.com/contact" target="_blank">Contact Us</a>
+        </div>
+    </footer>
+
+    <script>
+        // Track when users click to open the form
+        function trackFormOpen() {
+            console.log('Coating Discovery Guide form opened at: ' + new Date().toISOString());
+            // You can add Google Analytics or other tracking here
+        }
+
+        // Add smooth parallax effect on scroll
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero-section');
+            if (parallax) {
+                const speed = 0.15;
+                parallax.style.transform = `translateY(${scrolled * speed}px)`;
+            }
+        });
+
+        // Add animation on scroll for feature cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease-out';
+                    entry.target.style.animationFillMode = 'both';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Add hover effect to primary button
+        const primaryBtn = document.querySelector('.btn-primary');
+        if (primaryBtn) {
+            primaryBtn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.02)';
+            });
+            primaryBtn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        }
+    </script>
+</body>
+</html>
